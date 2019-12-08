@@ -4,9 +4,11 @@
 
 int main(){
 	
-	const char *s = "21132135 and 59425";
+	const char *s = "21132135 and 59425";		//integers in this string will be determined
+	
 	char *ptr   = (char*)s;
 	char *ptr1 = (char*)s;
+	
 	int first = 0;
 	int second = 0;
 	int lenght=0;
@@ -14,32 +16,39 @@ int main(){
 	
 	while(*ptr !='\0')
 	{
-		ptr++;
+		ptr++;					//pointer ptr is carried to end of the string
 	}
 	
-	ptr--;
+	ptr--;						//However last value of the string is useless for us, we need previous value 
 
 	while(isdigit(*ptr))
 	{	
 			
-		printf("deger :  %d\n",*ptr-'0');
-		first += (*ptr-'0') * pow(10,lenght);
-		lenght++;
+		printf("value :  %d\n",*ptr-'0');
+		second += (*ptr-'0') * pow(10,lenght);	//Current digit is multiplied by its place value 
+		lenght++;				//and integer variable (second) keep the value
 		ptr--;
 	}
+	
 	while(!isdigit(*ptr))
 	{
-		ptr--;
+		ptr--;					//noninteger digits is passed
 	}
+	
 	printf("\n");
+	
 	while(ptr >= s)
 	{
-		printf("deger :  %d\n",*ptr-'0');
-		second += (*ptr-'0') * pow(10,lenght2);
-		lenght2++;
+		printf("value :  %d\n",*ptr-'0');
+		first += (*ptr-'0') * pow(10,lenght2);	//Current digit is multiplied by its place value
+		lenght2++;				//and integer variable (first) keep the value
 		ptr--;
 	}
 		
-	printf("\nfirst : %d\n",first);
-	printf("second: %d\n",second);
+	printf("\nfirst : %d\n",first);			//integers is printed to screen
+	printf("second: %d,second);
+	
+	/*
+	By using dynamic memory this code can be modified to determine lots of integer in a string
+	*/
 }
