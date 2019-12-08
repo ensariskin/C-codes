@@ -1,46 +1,45 @@
 #include <stdio.h>
 #include <math.h>
 #include <ctype.h>
+
 int main(){
 	
 	const char *s = "21132135 and 59425";
-  
 	char *ptr   = (char*)s;
-	char *ptr1  = (char*)s;
+	char *ptr1 = (char*)s;
 	int first = 0;
 	int second = 0;
-	int lenght = 0;
-	int lenght2 = 0;
+	int lenght=0;
+	int lenght2=0;
 	
-	 while(*ptr !='\0')
-	 {	
-	 ptr++;
-	 	
-	 }
+	while(*ptr !='\0')
+	{
+		ptr++;
+	}
+	
 	ptr--;
 
-		while(isdigit(*ptr))
-		{	
+	while(isdigit(*ptr))
+	{	
 			
-			printf("deger :  %d\n",*ptr-'0');
-			first += (*ptr-'0') * pow(10,lenght);
-			lenght++;
-			ptr--;
-		}
-		while(!isdigit(*ptr))
-		{
-			ptr--;
-		}
-		printf("\n");
-		while(ptr >= s)
-		{
-			printf("deger :  %d\n",*ptr-'0');
-			second += (*ptr-'0') * pow(10,lenght2);
-			lenght2++;
-			ptr--;
-		}
+		printf("deger :  %d\n",*ptr-'0');
+		first += (*ptr-'0') * pow(10,lenght);
+		lenght++;
+		ptr--;
+	}
+	while(!isdigit(*ptr))
+	{
+		ptr--;
+	}
+	printf("\n");
+	while(ptr >= s)
+	{
+		printf("deger :  %d\n",*ptr-'0');
+		second += (*ptr-'0') * pow(10,lenght2);
+		lenght2++;
+		ptr--;
+	}
 		
-	
 	printf("\nfirst : %d\n",first);
 	printf("second: %d\n",second);
 }
